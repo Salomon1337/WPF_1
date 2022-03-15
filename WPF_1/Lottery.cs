@@ -42,5 +42,10 @@ namespace WPF_1
                 return false;
             }
         }
+        public String ReturnAll()
+        {
+            String result = String.Join(", ", list);
+            return result;
+        }
     }
 }

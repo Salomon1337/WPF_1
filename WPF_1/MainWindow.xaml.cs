@@ -32,13 +32,15 @@ namespace WPF_1
             string word = Input.Text;
             Lottery.Insert(word);
             Input.Text = "Wpisz słowo";
+            Label.Content = $"Wrzucono {word}. Pełna lista: {Lottery.ReturnAll()}";
         }
 
         private void Button_Click_Wyjmij(object sender, RoutedEventArgs e)
         {
             if (Lottery.IsEmpty() == false)
             {
-                Label.Content = Lottery.TakeOutAndDelete();
+                String word = Lottery.TakeOutAndDelete();
+                Label.Content = $"Wyjęto {word}. Pełna lista: {Lottery.ReturnAll()}";
             }
 
         }
